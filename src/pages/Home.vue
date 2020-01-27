@@ -55,8 +55,10 @@ export default {
     handleFocus(index) {
       if (index > -1) {
         const noteIndex = this.notes.findIndex(note => note.index === index);
-        if (noteIndex > -1) {
+        if (noteIndex > -1 && this.selectedNote !== index) {
           this.selectedNote = index;
+        } else {
+          this.selectedNote = null;
         }
       }
     },
